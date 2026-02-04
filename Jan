@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hey Janvi 💌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", system-ui, sans-serif;
+      text-align: center;
+      color: #2d2d2d;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      position: relative;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #f1f1f1;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>Hey Janvi 💖</h1>
+    <p>Will you be my Valentine?</p>
+    <button class="yes" onclick="valentineYes()">Yes 🥰</button>
+    <button class="no" id="noBtn">No (illegal)</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    function valentineYes() {
+      document.getElementById("card").innerHTML = `
+        <h1>Okay but one more thing 😌</h1>
+        <p>
+          I know you’re already my girlfriend…<br>
+          but will you be my girlfriend again?
+        </p>
+        <button class="yes" onclick="gfYes()">Obviously yes 💘</button>
+      `;
+    }
+
+    function gfYes() {
+      document.getElementById("card").innerHTML = `
+        <h1>YAY 💞</h1>
+        <p>
+          Officially, unofficially, repeatedly—<br>
+          you’re my girlfriend and my Valentine 🥹
+        </p>
+        <p>Now come here 🫶</p>
+      `;
+    }
+  </script>
+</body>
+</html>
